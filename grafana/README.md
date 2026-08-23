@@ -13,18 +13,14 @@ helm pull grafana/grafana -d ../
 helm repo index ../
 ```
 Merge this changes on main. Now, 
-```bash
-helm repo add platform-observability https://publicstaticdevnull.github.io/platform-observability ; helm repo update platform-observabilitys
-helm search repo platform-observability     # To check everything went well
-```
-If you want to try it manually, follow. 
+
 
 
 ## Install Manually
 Just for kicks. This is intalled through ArgoCD.
 
 ```bash
-helm install grafana platform-observability/grafana \
+helm install grafana grafana/grafana \
 --namespace monitoring \
 --create-namespace=true \
 -f values.yaml --rollback-on-failure
