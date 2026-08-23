@@ -1,0 +1,7 @@
+persistence:
+  enabled: true
+  type: pvc
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  size: 20Gi
