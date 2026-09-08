@@ -6,3 +6,4 @@ So, the install title is to manually install, but on my cluster this is not the 
 ## Application
 
 * **grafana**: Dashboard and alert manager.
+* **loki**: Log endpoint
