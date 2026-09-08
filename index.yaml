@@ -10,7 +10,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 12.3.1
-    created: "2026-08-23T14:34:42.325595838-03:00"
+    created: "2026-09-08T09:30:57.20761647-03:00"
     deprecated: true
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c08c87969270402e7d5227edb8385af67cc32ee34817bff89773ad02303b5d79
@@ -43,4 +43,41 @@ entries:
     urls:
     - grafana-10.5.15.tgz
     version: 10.5.15
-generated: "2026-08-23T14:34:42.323023298-03:00"
+  loki:
+  - apiVersion: v2
+    appVersion: 3.6.12
+    created: "2026-09-08T09:30:57.21933556-03:00"
+    dependencies:
+    - alias: minio
+      condition: minio.enabled
+      name: minio
+      repository: https://charts.min.io/
+      version: 5.4.0
+    - alias: grafana-agent-operator
+      condition: monitoring.selfMonitoring.grafanaAgent.installOperator
+      name: grafana-agent-operator
+      repository: https://grafana.github.io/helm-charts
+      version: 0.5.2
+    - alias: rollout_operator
+      condition: rollout_operator.enabled
+      name: rollout-operator
+      repository: https://grafana.github.io/helm-charts
+      version: 0.50.0
+    description: Helm chart for Grafana Enterprise Logs supporting monolithic, simple
+      scalable, and microservices modes.
+    digest: 04a339f712d770a1f599f05fc0a5a3cde18e43914e49ae6a49f7171be86bcc09
+    home: https://grafana.github.io/helm-charts
+    icon: https://grafana.com/docs/loki/latest/logo_and_name.png
+    maintainers:
+    - name: trevorwhitney
+    - name: jeschkies
+    name: loki
+    sources:
+    - https://github.com/grafana/loki
+    - https://grafana.com/oss/loki/
+    - https://grafana.com/docs/loki/latest/
+    type: application
+    urls:
+    - loki-7.3.0.tgz
+    version: 7.3.0
+generated: "2026-09-08T09:30:57.203459489-03:00"

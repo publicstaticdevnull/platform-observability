@@ -1,0 +1,42 @@
+deploymentMode: SingleBinary
+
+minio:
+  enabled: false
+
+gateway:
+  enabled: true
+  basicAuth:
+    enabled: true
+    existingSecret: loki-basic-auth
+
+canary:
+  enabled: true
+  basicAuth:
+    existingSecret: canary-basic-auth
+
+loki:
+  schemaConfig:
+    configs:
+      - from: "2024-04-01"
+        store: tsdb
+        object_store: filesystem
+        schema: v13
+        index:
+          prefix: loki_index_
+          period: 24h
+  storage:
+    type: filesystem
+  memberlist:
+    join_members: []
+
+singleBinary:
+  replicas: 1
+
+backend:
+  replicas: 0
+
+read:
+  replicas: 0
+
+write:
+  replicas: 0
